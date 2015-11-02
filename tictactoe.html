@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <h1 id="title">The <span id="best">BEST</span> Game of Tic Tac Toe That You Will Ever Play</h1>
+    <p id="notes"></p>
+    <button type="button" onclick="clearBoard('gameTable')">Clear Board</button>
+    <table id="gameTable">
+      <tr>
+        <td>
+          <div class="gameCell" id="topLeft" onclick="changeToX('topLeft')">
+          </div>
+        </td>
+        <td>
+          <div class="gameCell" id="topMiddle" onclick="changeToX('topMiddle')">
+          </div>
+        </td>
+        <td>
+          <div class="gameCell" id="topRight" onclick="changeToX('topRight')">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="gameCell" id="middleLeft" onclick="changeToX('middleLeft')">
+          </div>
+        </td>
+        <td>
+          <div class="gameCell" id="middleMiddle" onclick="changeToX('middleMiddle')">
+          </div>
+        </td>
+        <td>
+          <div class="gameCell" id="middleRight" onclick="changeToX('middleRight')">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="gameCell" id="bottomLeft" onclick="changeToX('bottomLeft')">
+          </div>
+        </td>
+        <td>
+          <div class="gameCell" id="bottomMiddle" onclick="changeToX('bottomMiddle')">
+          </div>
+        </td>
+        <td>
+          <div class="gameCell" id="bottomRight" onclick="changeToX('bottomRight')">
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

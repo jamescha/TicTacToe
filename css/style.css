@@ -1,0 +1,25 @@
+#title{
+  font-size:40px;
+}
+
+#best {
+  font-weight: bold;
+  font-size: 80px;
+}
+
+#gameTable {
+  border: 3px solid black;
+}
+
+.gameCell {
+  position: relative;
+  background-color: white;
+  width: 200px;
+  height: 200px;
+  border: 3px solid black;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
