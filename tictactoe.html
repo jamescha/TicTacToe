@@ -7,48 +7,48 @@
   </head>
   <body>
     <h1 id="title">The <span id="best">BEST</span> Game of Tic Tac Toe That You Will Ever Play</h1>
-    <p id="notes"></p>
+    <h1 id="notes"></h1>
     <button type="button" onclick="clearBoard('gameTable')">Clear Board</button>
     <table id="gameTable">
       <tr>
         <td>
-          <div class="gameCell" id="topLeft" onclick="changeToX('topLeft')">
+          <div class="gameCell" id="topLeft" onclick="markTheBoard('topLeft')">
           </div>
         </td>
         <td>
-          <div class="gameCell" id="topMiddle" onclick="changeToX('topMiddle')">
+          <div class="gameCell" id="topMiddle" onclick="markTheBoard('topMiddle')">
           </div>
         </td>
         <td>
-          <div class="gameCell" id="topRight" onclick="changeToX('topRight')">
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="gameCell" id="middleLeft" onclick="changeToX('middleLeft')">
-          </div>
-        </td>
-        <td>
-          <div class="gameCell" id="middleMiddle" onclick="changeToX('middleMiddle')">
-          </div>
-        </td>
-        <td>
-          <div class="gameCell" id="middleRight" onclick="changeToX('middleRight')">
+          <div class="gameCell" id="topRight" onclick="markTheBoard('topRight')">
           </div>
         </td>
       </tr>
       <tr>
         <td>
-          <div class="gameCell" id="bottomLeft" onclick="changeToX('bottomLeft')">
+          <div class="gameCell" id="middleLeft" onclick="markTheBoard('middleLeft')">
           </div>
         </td>
         <td>
-          <div class="gameCell" id="bottomMiddle" onclick="changeToX('bottomMiddle')">
+          <div class="gameCell" id="middleMiddle" onclick="markTheBoard('middleMiddle')">
           </div>
         </td>
         <td>
-          <div class="gameCell" id="bottomRight" onclick="changeToX('bottomRight')">
+          <div class="gameCell" id="middleRight" onclick="markTheBoard('middleRight')">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="gameCell" id="bottomLeft" onclick="markTheBoard('bottomLeft')">
+          </div>
+        </td>
+        <td>
+          <div class="gameCell" id="bottomMiddle" onclick="markTheBoard('bottomMiddle')">
+          </div>
+        </td>
+        <td>
+          <div class="gameCell" id="bottomRight" onclick="markTheBoard('bottomRight')">
           </div>
         </td>
       </tr>

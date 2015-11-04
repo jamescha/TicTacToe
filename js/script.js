@@ -9,15 +9,18 @@ var gameBoard = [[new gameCell(), new gameCell(), new gameCell()],
 var player = true;
 var winningMark;
 
-function changeToX(space){
+var imageX = '<img src="./img/X.png">';
+var imageO = '<img src="./img/O.png">';
+
+function markTheBoard(space){
   if (space === 'topLeft') {
     if(!gameBoard[0][0].filled)
     {
       gameBoard[0][0].mark = player;
       if (player) {
-        document.getElementById(space).innerHTML = '<img src="./img/X.png">';
+        document.getElementById(space).innerHTML = imageX;
       } else {
-        document.getElementById(space).innerHTML = '<img src="./img/O.png">';
+        document.getElementById(space).innerHTML = imageO;
       }
       gameBoard[0][0].filled = true;
       player = !player;
@@ -27,9 +30,9 @@ function changeToX(space){
     {
       gameBoard[0][1].mark = player;
       if (player) {
-        document.getElementById(space).innerHTML = '<img src="./img/X.png">';
+        document.getElementById(space).innerHTML = imageX;
       } else {
-        document.getElementById(space).innerHTML = '<img src="./img/O.png">';
+        document.getElementById(space).innerHTML = imageO;
       }
       gameBoard[0][1].filled = true;
       player = !player;
@@ -39,9 +42,9 @@ function changeToX(space){
     {
       gameBoard[0][2].mark = player;
       if (player) {
-        document.getElementById(space).innerHTML = '<img src="./img/X.png">';
+        document.getElementById(space).innerHTML = imageX;
       } else {
-        document.getElementById(space).innerHTML = '<img src="./img/O.png">';
+        document.getElementById(space).innerHTML = imageO;
       }
       gameBoard[0][2].filled = true;
       player = !player;
@@ -51,9 +54,9 @@ function changeToX(space){
     {
       gameBoard[1][0].mark = player;
       if (player) {
-        document.getElementById(space).innerHTML = '<img src="./img/X.png">';
+        document.getElementById(space).innerHTML = imageX;
       } else {
-        document.getElementById(space).innerHTML = '<img src="./img/O.png">';
+        document.getElementById(space).innerHTML = imageO;
       }
       gameBoard[1][0].filled = true;
       player = !player;
@@ -63,9 +66,9 @@ function changeToX(space){
     {
       gameBoard[1][1].mark = player;
       if (player) {
-        document.getElementById(space).innerHTML = '<img src="./img/X.png">';
+        document.getElementById(space).innerHTML = imageX;
       } else {
-        document.getElementById(space).innerHTML = '<img src="./img/O.png">';
+        document.getElementById(space).innerHTML = imageO;
       }
       gameBoard[1][1].filled = true;
       player = !player;
@@ -75,9 +78,9 @@ function changeToX(space){
     {
       gameBoard[1][2].mark = player;
       if (player) {
-        document.getElementById(space).innerHTML = '<img src="./img/X.png">';
+        document.getElementById(space).innerHTML = imageX;
       } else {
-        document.getElementById(space).innerHTML = '<img src="./img/O.png">';
+        document.getElementById(space).innerHTML = imageO;
       }
       gameBoard[1][2].filled = true;
       player = !player;
@@ -87,9 +90,9 @@ function changeToX(space){
     {
       gameBoard[2][0].mark = player;
       if (player) {
-        document.getElementById(space).innerHTML = '<img src="./img/X.png">';
+        document.getElementById(space).innerHTML = imageX;
       } else {
-        document.getElementById(space).innerHTML = '<img src="./img/O.png">';
+        document.getElementById(space).innerHTML = imageO;
       }
       gameBoard[2][0].filled = true;
       player = !player;
@@ -99,9 +102,9 @@ function changeToX(space){
     {
       gameBoard[2][1].mark = player;
       if (player) {
-        document.getElementById(space).innerHTML = '<img src="./img/X.png">';
+        document.getElementById(space).innerHTML = imageX;
       } else {
-        document.getElementById(space).innerHTML = '<img src="./img/O.png">';
+        document.getElementById(space).innerHTML = imageO;
       }
       gameBoard[2][1].filled = true;
       player = !player;
@@ -111,9 +114,9 @@ function changeToX(space){
     {
       gameBoard[2][2].mark = player;
       if (player) {
-        document.getElementById(space).innerHTML = '<img src="./img/X.png">';
+        document.getElementById(space).innerHTML = imageX;
       } else {
-        document.getElementById(space).innerHTML = '<img src="./img/O.png">';
+        document.getElementById(space).innerHTML = imageO;
       }
       gameBoard[2][2].filled = true;
       player = !player;
@@ -123,6 +126,10 @@ function changeToX(space){
   if(checkGameOver()) {
     document.getElementById("notes").innerHTML = winningMark + "'s WIN!!!!";
     gameOver();
+  }
+
+  if(checkCatsGame()) {
+      document.getElementById("notes").innerHTML = "Cats Game!"
   }
 }
 
@@ -187,7 +194,7 @@ function checkGameOver() {
       return true;
     }
   }
-  return undefined;
+  return false;
 }
 
 function gameOver() {
@@ -204,4 +211,14 @@ function gameOver() {
 
 function clearBoard() {
   location.reload();
+}
+
+function checkCatsGame() {
+  for (var i = 0; i < 3; i++) {
+    for (var j = 0; j <3; j++) {
+      if(gameBoard[i][j].filled === false)
+        return false;
+    }
+  }
+  return true;
 }
